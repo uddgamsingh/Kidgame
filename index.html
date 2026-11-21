@@ -429,6 +429,113 @@ h3.grp{scroll-margin-top:70px}
 .banner.on{display:flex}
 .banner div{background:#fff;border-radius:38px;padding:24px 34px;font-size:44px;font-weight:700;color:#ff4f9a;box-shadow:0 10px 0 rgba(0,0,0,.22);animation:boom .6s;text-align:center}
 @keyframes boom{from{transform:scale(.2) rotate(-20deg)}70%{transform:scale(1.15)}to{transform:none}}
+
+/* ===== DESKTOP / TABLET LAYOUT ===== */
+@media (min-width:760px){
+ .screen{max-width:760px}
+ #home{max-width:1180px;padding:0 32px 70px}
+ #home .grid{grid-template-columns:repeat(3,1fr);gap:20px}
+ .tile{padding:22px 10px 16px;font-size:23px;border-radius:34px;cursor:pointer}
+ .tile .e{font-size:74px}
+ .tile small{font-size:16px}
+ .tile:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 14px 0 rgba(0,0,0,.2),0 18px 30px rgba(60,20,120,.3),inset 0 6px 0 rgba(255,255,255,.35)}
+ .tile:active{transform:translateY(4px)}
+ h1{font-size:84px}
+ .sub{font-size:26px}
+ .hero{height:220px}
+ .hero .rb{width:400px;height:200px;margin-left:-200px;border-radius:200px 200px 0 0}
+ h3.grp{font-size:32px;margin:40px 0 18px}
+ h3.grp:after{height:8px}
+ h2{font-size:34px}
+ .stage{max-width:min(100%,calc(100vh - 300px));min-width:320px;margin-left:auto;margin-right:auto}
+ .pill{font-size:26px}
+ .back{font-size:22px;padding:10px 22px}
+ .back:hover,.chip:hover{filter:brightness(1.08);transform:translateY(-2px)}
+ .top{padding:16px 28px}
+}
+@media (min-width:1100px){
+ #home .grid{grid-template-columns:repeat(4,1fr)}
+ .screen{max-width:860px}
+}
+@media (min-width:1500px){
+ #home{max-width:1400px}
+ #home .grid{grid-template-columns:repeat(5,1fr)}
+}
+
+@media (min-width:760px){
+ .hero{height:170px}
+ .hero .rb{width:320px;height:160px;margin-left:-160px}
+ h1{font-size:72px}
+ #jump{justify-content:safe center;overflow-x:auto}
+ #jump .chip{font-size:30px;padding:8px 18px}
+ #jump .chip:hover{transform:translateY(-3px) scale(1.08)}
+ .cwrap{max-width:min(100%,calc((100vh - 440px)*1.15));min-width:300px;margin-left:auto;margin-right:auto}
+ #picPick{max-height:none;overflow:visible}
+ #picPick .chip{font-size:28px;padding:6px 14px}
+ .chip{font-size:20px;cursor:pointer}
+}
+
+/* ===== TABBED HOME (no scrolling lists) ===== */
+#jump{flex-wrap:wrap!important;overflow:visible!important;justify-content:center!important;gap:8px;padding:4px 0 14px!important;margin:0 auto;max-width:980px}
+#jump .chip{flex:none;font-size:15px!important;padding:8px 14px!important;border-radius:999px;font-weight:700;background:rgba(255,255,255,.85);color:#5b2d9a;box-shadow:0 4px 0 rgba(90,40,170,.25);transition:transform .12s,background .15s,color .15s;white-space:nowrap}
+#jump .chip.on{background:linear-gradient(180deg,#ff7ab8,#ff4f9a);color:#fff;transform:translateY(-2px) scale(1.06);box-shadow:0 6px 0 rgba(170,20,90,.35)}
+#menu .grid{animation:tabin .35s ease-out}
+@keyframes tabin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#picPick{max-height:none!important;overflow:visible!important;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+@media (min-width:760px){
+ #jump .chip{font-size:18px!important;padding:10px 20px!important}
+ #jump .chip:hover{transform:translateY(-3px)}
+ #jump .chip.on{transform:translateY(-3px) scale(1.07)}
+ .hero{height:130px!important}
+ .hero .rb{width:260px!important;height:130px!important;margin-left:-130px!important}
+ h1{font-size:60px!important}
+ .sub{font-size:22px!important;margin:0 0 8px}
+ #home{padding-bottom:40px!important}
+ #home .grid{grid-template-columns:repeat(4,1fr)!important;gap:18px!important;max-width:1100px;margin:0 auto}
+ .tile{padding:18px 10px 14px!important;font-size:21px!important}
+ .tile .e{font-size:64px!important}
+ .tile.wide{grid-column:auto}
+}
+@media (min-width:1500px){#home .grid{grid-template-columns:repeat(5,1fr)!important;max-width:1300px}}
+
+/* ===== DESKTOP: sidebar chips + games panel, fits one screen ===== */
+@media (min-width:1000px){
+ #home{display:grid!important;grid-template-columns:280px 1fr;column-gap:36px;align-items:start;max-width:1280px!important;padding:0 40px 30px!important}
+ #home .hero{display:none!important}
+ #home h1{grid-column:1/-1;font-size:56px!important;margin:6px 0 0!important}
+ #home .sub{grid-column:1/-1;margin:0 0 14px!important;text-align:center}
+ #home>div:has(#surprise){grid-column:1;grid-row:3;margin:0!important}
+ #home>div:has(#kidBtn){grid-column:1;grid-row:4;margin:10px 0 0!important}
+ #jump{grid-column:1;grid-row:5;flex-direction:column;flex-wrap:nowrap!important;align-items:stretch;gap:8px;max-width:none;padding:14px 0 0!important}
+ #jump .chip{text-align:left;font-size:18px!important;padding:11px 18px!important;border-radius:22px}
+ #jump .chip.on{transform:translateX(8px) scale(1.03)}
+ #menu{grid-column:2;grid-row:3/span 3}
+ #home .grid{grid-template-columns:repeat(3,1fr)!important;gap:16px!important;max-width:none!important}
+ .tile{padding:14px 8px 12px!important;font-size:20px!important}
+ .tile .e{font-size:58px!important}
+ .tile small{font-size:14px!important}
+}
+@media (min-width:1500px){#home .grid{grid-template-columns:repeat(4,1fr)!important}#home{max-width:1480px!important}}
+
+@media (min-width:1000px){
+ #home h1{font-size:44px!important;margin:0!important}
+ #home .sub{font-size:18px!important;margin:0 0 8px!important}
+ #home>div:has(#kidBtn){gap:6px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+ #home>div:has(#kidBtn) .chip{font-size:14px!important;padding:7px 10px!important;white-space:nowrap}
+ #home .btn.big{font-size:22px!important;padding:12px 18px!important;width:100%}
+ #jump{gap:6px!important;padding-top:10px!important}
+ #jump .chip{padding:8px 16px!important;font-size:17px!important}
+ .tile.wide{grid-column:auto!important;width:100%}
+}
+
+@media (max-width:759px){
+ #home .hero{height:120px!important;margin-bottom:6px}
+ #home h1{font-size:44px!important;margin:0!important}
+ #home .sub{font-size:16px!important;margin:0 0 6px!important}
+ #home .btn.big{font-size:20px!important;padding:10px 18px!important}
+ #jump{gap:6px!important;padding-bottom:10px!important}
+ #jump .chip{font-size:14px!important;padding:7px 11px!important}
+}
 </style>
 </head>
 <body>
@@ -1004,11 +1111,18 @@ const MENU=[
  ['🧠 Brain Games',[['memory','🧠','Memory Match','Find the pairs'],['simon','🔴','Colour Echo','Copy the lights'],['dots','🧷','Dot to Dot','Connect 1, 2, 3…'],['puzzle','🧩','Puzzle Time','Swap the pieces']]]
 ];
 const ALL=[];let ti=0;
-$('#menu').innerHTML=MENU.map(([g,list],gi)=>`<h3 class="grp" id="grp${gi}">${g}</h3><div class="grid">`+list.map((x,i)=>{ALL.push(x[0]);ti++;return `<button class="tile g${(ti-1)%9+1}${list.length%2&&i===list.length-1?' wide':''}" data-go="${x[0]}" style="animation-delay:${ti*.03}s"><span class="e">${x[1]}</span>${x[2]}<small>${x[3]}</small></button>`}).join('')+`</div>`).join('');
+const gridHTML=(gi)=>{const list=MENU[gi][1];return `<div class="grid">`+list.map((x,i)=>`<button class="tile g${(i+gi*3)%9+1}${list.length%2&&i===list.length-1?' wide':''}" data-go="${x[0]}" style="animation-delay:${i*.05}s"><span class="e">${x[1]}</span>${x[2]}<small>${x[3]}</small></button>`).join('')+`</div>`};
+MENU.forEach(m=>m[1].forEach(x=>ALL.push(x[0])));
+let curTab=0;try{curTab=Math.min(MENU.length-1,+localStorage.getItem('kg-tab')||0)}catch(e){}
+function showTab(i){curTab=i;try{localStorage.setItem('kg-tab',i)}catch(e){}
+ $('#menu').innerHTML=gridHTML(i);
+ $$('#jump .chip').forEach((c,j)=>c.classList.toggle('on',j===i));
+ $$('#menu .tile').forEach(t=>t.onclick=()=>{audio();go(t.dataset.go)})}
 $('#surprise').onclick=()=>{audio();go(rnd(ALL))};
 $('.sub').textContent=ALL.length+' games to play! 🎉';
-$('#jump').innerHTML=MENU.map(([g],i)=>`<button class="chip" data-i="${i}">${g.split(' ')[0]}</button>`).join('');
-$$('#jump .chip').forEach(b=>b.onclick=()=>{sfx.tap();document.getElementById('grp'+b.dataset.i).scrollIntoView({behavior:'smooth',block:'start'})});
+$('#jump').innerHTML=MENU.map(([g],i)=>`<button class="chip" data-i="${i}">${g}</button>`).join('');
+$$('#jump .chip').forEach(b=>b.onclick=()=>{sfx.tap();showTab(+b.dataset.i)});
+showTab(curTab);
 
 const THEMES={dance:'linear-gradient(160deg,#3a1f8a,#c22fb0)',weather:'linear-gradient(160deg,#6fd0ff,#c9f0ff)',pizza:'linear-gradient(160deg,#ffd9a8,#ff9a6a)',icecream:'linear-gradient(160deg,#ffd1e8,#c9e4ff)',grow:'linear-gradient(160deg,#baf3ff,#c9ffb8)',race:'linear-gradient(160deg,#b8c4ff,#7aa0ff)',eggs:'linear-gradient(160deg,#fff0a8,#ffb3d6)',pet:'linear-gradient(160deg,#ffd6ec,#ffe9a8)',makeup:'linear-gradient(160deg,#ffc2e6,#c9b3ff)',sounds:'linear-gradient(160deg,#ffe066,#ff8ad4)',hide:'linear-gradient(160deg,#aef0b0,#7fd1ff)',mix:'linear-gradient(160deg,#d6f2ff,#e8d4ff)',fish:'linear-gradient(160deg,#7fe3ff,#2b7bff)',fire:'linear-gradient(160deg,#2a1f6b,#6a2fb0)',whack:'linear-gradient(160deg,#b9f27c,#4dbb34)',catch:'linear-gradient(160deg,#ffd36e,#ff9ac2)',piano:'linear-gradient(160deg,#ffe29a,#ff9ad5)',feed:'linear-gradient(160deg,#aef0b0,#6fd6ff)',cat:'linear-gradient(160deg,#ffcf8a,#ff8ad4)',simon:'linear-gradient(160deg,#84f0ff,#8f7bff)',sticker:'linear-gradient(160deg,#baf3ff,#ffe3a8)'};
 let current='home',stopSong=false;
