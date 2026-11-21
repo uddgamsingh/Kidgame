@@ -500,7 +500,7 @@ h3.grp{scroll-margin-top:70px}
 
 /* ===== DESKTOP: sidebar chips + games panel, fits one screen ===== */
 @media (min-width:1000px){
- #home{display:grid!important;grid-template-columns:280px 1fr;column-gap:36px;align-items:start;max-width:1280px!important;padding:0 40px 30px!important}
+ #home.on{display:grid!important;grid-template-columns:280px 1fr;column-gap:36px;align-items:start;max-width:1280px!important;padding:0 40px 30px!important}
  #home .hero{display:none!important}
  #home h1{grid-column:1/-1;font-size:56px!important;margin:6px 0 0!important}
  #home .sub{grid-column:1/-1;margin:0 0 14px!important;text-align:center}
@@ -557,7 +557,7 @@ h3.grp{scroll-margin-top:70px}
  #jump .chip .cl2{display:inline}
 }
 @media (min-width:1000px){
- #home{display:grid!important;grid-template-columns:270px 1fr!important;column-gap:34px;align-items:start}
+ #home.on{display:grid!important;grid-template-columns:270px 1fr!important;column-gap:34px;align-items:start}
  #home{grid-template-rows:auto auto auto auto 1fr}
  #home h1{margin:10px 0 0!important;grid-row:1}
  #home .sub{grid-row:2}
@@ -588,7 +588,7 @@ h3.grp{scroll-margin-top:70px}
 <div id="floaters"></div>
 
 <div class="top">
-  <button class="back" id="backBtn" style="visibility:hidden">⬅ Home</button>
+  <button class="back" id="backBtn" style="visibility:hidden">☰ Menu</button>
   <div class="pill" id="starPill">⭐ <span id="stars">0</span></div>
 </div>
 
