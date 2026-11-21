@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
-html,body{margin:0;min-height:100%;font-family:'Fredoka','Comic Sans MS',system-ui,sans-serif;color:#3b2a6b;overflow-x:hidden}
+html,body{margin:0;min-height:100%;font-family:'Fredoka','Comic Sans MS',system-ui,sans-serif;color:#3b2a6b}html{overflow-x:hidden}body{overflow-x:clip}
 body{background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.55),transparent 35%),radial-gradient(circle at 85% 30%,rgba(255,240,150,.45),transparent 35%),linear-gradient(160deg,#6ee7ff,#a78bfa 45%,#ff8ad4 80%,#ffd36e);background-size:100% 100%,100% 100%,300% 300%;animation:bgmove 18s ease infinite;background-attachment:fixed;transition:background .5s}
 body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:90px;z-index:0;pointer-events:none;background:
  radial-gradient(ellipse 60% 100% at 15% 100%,#6fdc6a 60%,transparent 61%),
@@ -535,6 +535,52 @@ h3.grp{scroll-margin-top:70px}
  #home .btn.big{font-size:20px!important;padding:10px 18px!important}
  #jump{gap:6px!important;padding-bottom:10px!important}
  #jump .chip{font-size:14px!important;padding:7px 11px!important}
+}
+
+/* ===== FINAL HOME: scrolling sections + sticky chip nav ===== */
+#jump{position:sticky;top:0;z-index:20;display:flex!important;flex-wrap:nowrap!important;gap:6px!important;justify-content:center!important;padding:8px 6px!important;margin:0 -6px 6px!important;max-width:none!important;background:rgba(255,255,255,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid rgba(255,255,255,.7);box-shadow:0 6px 18px rgba(80,40,160,.15);border-radius:0 0 22px 22px}
+#jump .chip{font-size:22px!important;padding:6px 9px!important;border-radius:16px;display:flex;align-items:center;gap:8px;background:#fff!important;color:#5b2d9a!important;box-shadow:0 3px 0 rgba(90,40,170,.22)!important}
+#jump .chip .cl2{display:none;font-size:17px;font-weight:700}
+#jump .chip.on{background:linear-gradient(180deg,#ff7ab8,#ff4f9a)!important;color:#fff!important;transform:translateY(-2px)!important;box-shadow:0 5px 0 rgba(170,20,90,.35)!important}
+#menu .grid{animation:none}
+.cat{margin:18px 0 8px;padding:14px 14px 18px;border-radius:34px;background:rgba(255,255,255,.28);border:2px solid rgba(255,255,255,.55);box-shadow:0 10px 30px rgba(80,40,160,.14),inset 0 2px 0 rgba(255,255,255,.6);scroll-margin-top:76px}
+.chead{display:flex;align-items:center;gap:10px;margin:0 2px 14px}
+.chead .cem{font-size:34px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.15));animation:bob 2.4s ease-in-out infinite}
+.chead h3{margin:0;font-size:25px;color:#fff;text-shadow:0 3px 0 rgba(90,40,170,.45);flex:1}
+.chead .cnt{background:#fff;color:#7b3fc0;font-weight:700;font-size:13px;padding:5px 12px;border-radius:999px;box-shadow:0 3px 0 rgba(90,40,170,.2)}
+.cat.c0{background:linear-gradient(160deg,rgba(255,170,90,.32),rgba(255,255,255,.2))}
+.cat.c1{background:linear-gradient(160deg,rgba(90,200,255,.32),rgba(255,255,255,.2))}
+.cat.c2{background:linear-gradient(160deg,rgba(120,220,120,.32),rgba(255,255,255,.2))}
+.cat.c3{background:linear-gradient(160deg,rgba(255,120,190,.32),rgba(255,255,255,.2))}
+.cat.c4{background:linear-gradient(160deg,rgba(190,140,255,.34),rgba(255,255,255,.2))}
+@media (min-width:760px){
+ #jump .chip .cl2{display:inline}
+}
+@media (min-width:1000px){
+ #home{display:grid!important;grid-template-columns:270px 1fr!important;column-gap:34px;align-items:start}
+ #home{grid-template-rows:auto auto auto auto 1fr}
+ #home h1{margin:10px 0 0!important;grid-row:1}
+ #home .sub{grid-row:2}
+ #home>div:has(#surprise){grid-row:3}
+ #home>div:has(#kidBtn){grid-row:4}
+ #jump{grid-column:1;grid-row:5;align-self:start;position:sticky;top:18px;z-index:5;flex-direction:column!important;align-items:stretch!important;gap:7px!important;padding:14px!important;margin:12px 0 0!important;border-radius:28px;border:2px solid rgba(255,255,255,.7);background:rgba(255,255,255,.5)}
+ #jump .chip{font-size:19px!important;padding:10px 16px!important;border-radius:18px;text-align:left}
+ #jump .chip .ce{font-size:24px}
+ #jump .chip.on{transform:translateX(6px)!important}
+ #menu{grid-column:2;grid-row:3/span 3}
+ #home>div:has(#surprise),#home>div:has(#kidBtn){grid-column:1}
+ .cat{margin:0 0 22px;padding:18px 20px 22px;scroll-margin-top:20px}
+ .chead h3{font-size:30px}.chead .cem{font-size:42px}
+ #home .grid{grid-template-columns:repeat(3,1fr)!important}
+}
+@media (min-width:1500px){#home .grid{grid-template-columns:repeat(4,1fr)!important}}
+@media (max-width:759px){
+ #jump{justify-content:space-between!important}
+ #jump .chip{flex:1;justify-content:center;padding:6px 0!important;font-size:21px!important}
+ .cat{border-radius:28px;margin:14px 0}
+ #home .hero{height:150px!important}
+ #jump{top:58px!important;border-radius:22px!important;margin-top:4px!important}
+ .cat{scroll-margin-top:130px}
 }
 </style>
 </head>
@@ -1111,18 +1157,17 @@ const MENU=[
  ['🧠 Brain Games',[['memory','🧠','Memory Match','Find the pairs'],['simon','🔴','Colour Echo','Copy the lights'],['dots','🧷','Dot to Dot','Connect 1, 2, 3…'],['puzzle','🧩','Puzzle Time','Swap the pieces']]]
 ];
 const ALL=[];let ti=0;
-const gridHTML=(gi)=>{const list=MENU[gi][1];return `<div class="grid">`+list.map((x,i)=>`<button class="tile g${(i+gi*3)%9+1}${list.length%2&&i===list.length-1?' wide':''}" data-go="${x[0]}" style="animation-delay:${i*.05}s"><span class="e">${x[1]}</span>${x[2]}<small>${x[3]}</small></button>`).join('')+`</div>`};
+const gridHTML=(gi)=>{const list=MENU[gi][1];return `<div class="grid">`+list.map((x,i)=>`<button class="tile g${(i+gi*3)%9+1}${list.length%2&&i===list.length-1?' wide':''}" data-go="${x[0]}" style="animation-delay:${i*.04}s"><span class="e">${x[1]}</span>${x[2]}<small>${x[3]}</small></button>`).join('')+`</div>`};
 MENU.forEach(m=>m[1].forEach(x=>ALL.push(x[0])));
-let curTab=0;try{curTab=Math.min(MENU.length-1,+localStorage.getItem('kg-tab')||0)}catch(e){}
-function showTab(i){curTab=i;try{localStorage.setItem('kg-tab',i)}catch(e){}
- $('#menu').innerHTML=gridHTML(i);
- $$('#jump .chip').forEach((c,j)=>c.classList.toggle('on',j===i));
- $$('#menu .tile').forEach(t=>t.onclick=()=>{audio();go(t.dataset.go)})}
+const gSplit=g=>{const m=g.match(/^(\S+)\s+(.*)$/);return [m[1],m[2]]};
+$('#menu').innerHTML=MENU.map(([g,list],gi)=>{const [em,nm]=gSplit(g);return `<section class="cat c${gi%5}" id="grp${gi}"><div class="chead"><span class="cem">${em}</span><h3>${nm}</h3><span class="cnt">${list.length} games</span></div>${gridHTML(gi)}</section>`}).join('');
+$$('#menu .tile').forEach(t=>t.onclick=()=>{audio();go(t.dataset.go)});
 $('#surprise').onclick=()=>{audio();go(rnd(ALL))};
 $('.sub').textContent=ALL.length+' games to play! 🎉';
-$('#jump').innerHTML=MENU.map(([g],i)=>`<button class="chip" data-i="${i}">${g}</button>`).join('');
-$$('#jump .chip').forEach(b=>b.onclick=()=>{sfx.tap();showTab(+b.dataset.i)});
-showTab(curTab);
+$('#jump').innerHTML=MENU.map(([g],i)=>{const [em,nm]=gSplit(g);return `<button class="chip" data-i="${i}" title="${nm}"><span class="ce">${em}</span><span class="cl2">${nm}</span></button>`}).join('');
+$$('#jump .chip').forEach(b=>b.onclick=()=>{sfx.tap();const el=document.getElementById('grp'+b.dataset.i);const y=el.getBoundingClientRect().top+scrollY-(innerWidth<1000?130:20);scrollTo({top:y,behavior:'smooth'})});
+function spy(){if(current!=='home')return;let k=0;const ref=innerWidth<1000?150:40;MENU.forEach((_,i)=>{if(document.getElementById('grp'+i).getBoundingClientRect().top<=ref+30)k=i});$$('#jump .chip').forEach((c,j)=>c.classList.toggle('on',j===k))}
+addEventListener('scroll',spy,{passive:true});setTimeout(spy,0);
 
 const THEMES={dance:'linear-gradient(160deg,#3a1f8a,#c22fb0)',weather:'linear-gradient(160deg,#6fd0ff,#c9f0ff)',pizza:'linear-gradient(160deg,#ffd9a8,#ff9a6a)',icecream:'linear-gradient(160deg,#ffd1e8,#c9e4ff)',grow:'linear-gradient(160deg,#baf3ff,#c9ffb8)',race:'linear-gradient(160deg,#b8c4ff,#7aa0ff)',eggs:'linear-gradient(160deg,#fff0a8,#ffb3d6)',pet:'linear-gradient(160deg,#ffd6ec,#ffe9a8)',makeup:'linear-gradient(160deg,#ffc2e6,#c9b3ff)',sounds:'linear-gradient(160deg,#ffe066,#ff8ad4)',hide:'linear-gradient(160deg,#aef0b0,#7fd1ff)',mix:'linear-gradient(160deg,#d6f2ff,#e8d4ff)',fish:'linear-gradient(160deg,#7fe3ff,#2b7bff)',fire:'linear-gradient(160deg,#2a1f6b,#6a2fb0)',whack:'linear-gradient(160deg,#b9f27c,#4dbb34)',catch:'linear-gradient(160deg,#ffd36e,#ff9ac2)',piano:'linear-gradient(160deg,#ffe29a,#ff9ad5)',feed:'linear-gradient(160deg,#aef0b0,#6fd6ff)',cat:'linear-gradient(160deg,#ffcf8a,#ff8ad4)',simon:'linear-gradient(160deg,#84f0ff,#8f7bff)',sticker:'linear-gradient(160deg,#baf3ff,#ffe3a8)'};
 let current='home',stopSong=false;
