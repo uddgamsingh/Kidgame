@@ -1,5 +1,5 @@
 /* Secret offline mode. This file does nothing unless the secret button registers it. */
-const CACHE = 'kidgames-v7';
+const CACHE = 'kidgames-v9';
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
 self.addEventListener('install', e => {
